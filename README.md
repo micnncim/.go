@@ -7,3 +7,4 @@ A template repository for Go.
 | Name          | Description      |
 | ------------- | ---------------- |
 | `<<PROJECT>>` | The project name |
+| `<<OWNER>>`   | The owner name   |
