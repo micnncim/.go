@@ -9,6 +9,7 @@ CMD = $(CMD_PREFIX)$(APP)
 # include
 
 include hack/make/go.mk
+include hack/make/docker.mk
 
 # ----------------------------------------------------------------------------
 # targets

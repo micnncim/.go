@@ -10,11 +10,6 @@ endif
 GO111MODULE := on
 CGO_ENABLED ?= 0
 
-DOCKER_BUILD_ARGS ?=
-DOCKER_BUILD_TARGET ?= ${APP}
-DOCKER_REGISTRY ?= index.docker.io
-DOCKER_BUILD_TAG ?= latest
-
 # ----------------------------------------------------------------------------
 # targets
 
@@ -27,7 +22,7 @@ install:
 ## dep
 
 .PHONY: dep
-dep:
+dep: ## Install dependencies as go modules.
 	go mod download
 	go mod verify
 	go mod tidy
@@ -52,7 +47,7 @@ lint/vet: ## Run go vet.
 	go vet ./...
 
 .PHONY: cmd/golangci-lint
-cmd/golangci-lint: $(GOPATH)/bin/golangci-lint ## Check existence of golangci-lint.
+cmd/golangci-lint: $(GOPATH)/bin/golangci-lint # Check existence of golangci-lint.
 
 .PHONY: lint/golangci-lint
 lint/golangci-lint: cmd/golangci-lint ## Run golangci-lint.
@@ -63,13 +58,3 @@ lint/golangci-lint: cmd/golangci-lint ## Run golangci-lint.
 .PHONY: clean
 clean:  ## Clean up cache.
 	go clean -cache
-
-## docker
-
-.PHONY: docker/build
-docker/build:  ## Create docker image.
-	docker image build ${DOCKER_BUILD_ARGS} --target ${DOCKER_BUILD_TARGET} -t $(DOCKER_REGISTRY)/$(APP):${DOCKER_BUILD_TAG} .
-
-.PHONY: docker/push
-docker/push:  ## Push docker image to docker registry.
-	docker image push $(DOCKER_REGISTRY)/$(APP):$(VERSION)
