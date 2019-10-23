@@ -1,6 +1,8 @@
 # ----------------------------------------------------------------------------
 # global
 
+.DEFAULT_GOAL = all
+
 APP = <<PROJECT>>
 CMD_PREFIX = <<PROJECT>>/cmd/
 CMD = $(CMD_PREFIX)$(APP)

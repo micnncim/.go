@@ -9,20 +9,30 @@ endif
 
 GO111MODULE := on
 CGO_ENABLED ?= 0
+BIN := bin
 
 # ----------------------------------------------------------------------------
 # targets
 
+## all
+
+.PHONY: all
+all: test build
+
 ## build and install
 
+.PHONY: build
+build: dep ## Build a Go application.
+	CGO_ENABLED=$(CGO_ENABLED) GOOS=$(GOOS) GOARCH=$(GOARCH) go build -o $(BIN)/$(APP) $(CMD)
+
 .PHONY: install
-install:
+install: dep ## Install a binary into $GOPATH/bin.
 	CGO_ENABLED=$(CGO_ENABLED) GOOS=$(GOOS) GOARCH=$(GOARCH) go install -v $(CMD)
 
 ## dep
 
 .PHONY: dep
-dep: ## Install dependencies as go modules.
+dep: ## Install dependencies as Go Modules.
 	go mod download
 	go mod verify
 	go mod tidy
@@ -30,17 +40,17 @@ dep: ## Install dependencies as go modules.
 ## test
 
 .PHONY: test
-test: lint ## Run test go files.
+test: lint ## Run test Go files.
 	go test -race ./...
 
 .PHONY: coverage
-coverage: ## Measure coverage for go files.
+coverage: ## Measure coverage for Go files.
 	go test -coverpkg ./... -covermode=atomic -coverprofile=coverage.txt -race ./...
 
 ## lint
 
 .PHONY: lint
-lint: lint/vet lint/golangci-lint ## Run all linters for go files.
+lint: lint/vet lint/golangci-lint ## Run all linters for Go files.
 
 .PHONY: lint/vet
 lint/vet: ## Run go vet.
