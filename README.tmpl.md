@@ -1,6 +1,7 @@
 # <<PROJECT>>
 
 [![actions-workflow-test][actions-workflow-test-badge]][actions-workflow-test]
+[![codecov][codecov-badge]][codecov]
 [![docker-build][docker-build-badge]][docker-build]
 [![release][release-badge]][release]
 [![go-version][go-version-badge]][go-version]
@@ -13,6 +14,9 @@
 
 [actions-workflow-test]: https://github.com/<<OWNER>>/<<PROJECT>>/actions?query=workflow%3ATest
 [actions-workflow-test-badge]: https://img.shields.io/github/workflow/status/<<OWNER>>/<<PROJECT>>/Test?label=Test&style=for-the-badge&logo=github
+
+[codecov]: https://codecov.io/gh/<<OWNER>>/<<PROJECT>>
+[codecov-badge]: https://img.shields.io/codecov/c/github/<<OWNER>>/<<PROJECT>>?style=for-the-badge&logo=codecov
 
 [docker-build]: https://hub.docker.com/r/<<OWNER>>/<<PROJECT>>
 [docker-build-badge]: https://img.shields.io/docker/cloud/build/<<OWNER>>/<<PROJECT>>?logo=docker&style=for-the-badge
@@ -29,7 +33,7 @@
 [codefactor]: https://www.codefactor.io/repository/github/<<OWNER>>/<<PROJECT>>
 [codefactor-badge]: https://img.shields.io/codefactor/grade/github/<<OWNER>>/<<PROJECT>>?logo=codefactor&style=for-the-badge
 
-[dependabot]: https://github.com/micnncim/action-label-syncer/pulls?q=is:pr%20author:app/dependabot-preview
+[dependabot]: https://github.com/<<OWNER>>/action-label-syncer/pulls?q=is:pr%20author:app/dependabot-preview
 [dependabot-badge]: https://img.shields.io/badge/dependabot-enabled-blue?style=for-the-badge&logo=dependabot
 
 [license]: LICENSE
