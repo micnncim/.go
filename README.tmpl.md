@@ -6,6 +6,7 @@
 [![release][release-badge]][release]
 [![go-version][go-version-badge]][go-version]
 [![pkg.go.dev][pkg.go.dev-badge]][pkg.go.dev]
+[![go-report-card][go-report-card-badge]][go-report-card]
 [![codefactor][codefactor-badge]][codefactor]
 [![dependabot][dependabot-badge]][dependabot]
 [![license][license-badge]][license]
@@ -26,6 +27,9 @@
 
 [pkg.go.dev]: https://pkg.go.dev/github.com/<<OWNER>>/<<PROJECT>>
 [pkg.go.dev-badge]: https://img.shields.io/badge/pkg.go.dev-reference-blue?style=for-the-badge&logo=go
+
+[go-report-card]: https://goreportcard.com/report/github.com/<<OWNER>>/<<PROJECT>>
+[go-report-card-badge]: https://goreportcard.com/badge/github.com/<<OWNER>>/<<PROJECT>>?style=for-the-badge
 
 [go-version]: go.mod
 [go-version-badge]: https://img.shields.io/github/go-mod/go-version/<<OWNER>>/<<PROJECT>>?logo=go&style=for-the-badge
