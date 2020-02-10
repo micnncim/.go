@@ -12,6 +12,7 @@ CMD = $(CMD_PREFIX)$(APP)
 
 include make/go.mk
 include make/docker.mk
+include make/license.mk
 
 # ----------------------------------------------------------------------------
 # targets
