@@ -29,8 +29,8 @@
 [codefactor]: https://www.codefactor.io/repository/github/<<OWNER>>/<<PROJECT>>
 [codefactor-badge]: https://img.shields.io/codefactor/grade/github/<<OWNER>>/<<PROJECT>>?logo=codefactor&style=for-the-badge
 
-[dependabot]: https://dependabot.com
-[dependabot-badge]: https://img.shields.io/badge/-dependabot-blue?style=for-the-badge&logo=dependabot
+[dependabot]: https://github.com/micnncim/action-label-syncer/pulls?q=is:pr%20author:app/dependabot-preview
+[dependabot-badge]: https://img.shields.io/badge/dependabot-enabled-blue?style=for-the-badge&logo=dependabot
 
 [license]: LICENSE
 [license-badge]: https://img.shields.io/github/license/<<OWNER>>/<<PROJECT>>?style=for-the-badge
