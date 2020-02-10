@@ -9,9 +9,8 @@ endif
 
 GO111MODULE := on
 CGO_ENABLED ?= 0
-BIN := bin
 
-GO_TEST ?= go test
+GOTEST ?= go test
 
 # ----------------------------------------------------------------------------
 # targets
@@ -19,7 +18,7 @@ GO_TEST ?= go test
 ## all
 
 .PHONY: all
-all: test build
+all: test
 
 ## build and install
 
@@ -43,27 +42,40 @@ dep: ## Install dependencies as Go Modules.
 
 .PHONY: test
 test: lint ## Run test Go files.
-	$(GO_TEST) -v -race ./...
+	$(GOTEST) -v -race ./...
 
 .PHONY: coverage
 coverage: ## Measure coverage for Go files.
-	go test -coverpkg ./... -covermode=atomic -coverprofile=coverage.txt -race ./...
+	$(GOTEST) -coverpkg ./... -covermode=atomic -coverprofile=coverage.txt -race ./...
 
 ## lint
 
 .PHONY: lint
-lint: lint/vet lint/golangci-lint ## Run all linters for Go files.
+lint: lint/vet lint/golint lint/golangci-lint ## Run all linters for Go files.
 
 .PHONY: lint/vet
 lint/vet: ## Run go vet.
 	go vet ./...
 
-.PHONY: cmd/golangci-lint
-cmd/golangci-lint: $(GOPATH)/bin/golangci-lint # Check existence of golangci-lint.
+.PHONY: lint/golint
+lint/golint: tools/bin/golint ## Run golint.
+	golint ./...
 
 .PHONY: lint/golangci-lint
-lint/golangci-lint: cmd/golangci-lint ## Run golangci-lint.
+lint/golangci-lint: tools/bin/golangci-lint ## Run golangci-lint.
 	golangci-lint run ./...
+
+## tools
+
+.PHONY: tools/update
+tools/update: ## Update binaries managed by tools.
+	cd tools && go mod tidy
+
+tools/bin/golint: tools/go.mod tools/go.sum
+	cd tools && go build -o bin/golint golang.org/x/lint/golint
+
+tools/bin/golangci-lint: tools/go.mod tools/go.sum
+	cd tools && go build -o bin/golangci-lint github.com/golangci/golangci-lint/cmd/golangci-lint
 
 ## clean
 
