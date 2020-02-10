@@ -7,12 +7,12 @@
 tools/update: ## Update binaries managed by tools.
 	cd tools && go mod tidy
 
-tools/bin/golint: tools/go.mod tools/go.sum ## golint
+tools/bin/golint: tools/go.mod tools/go.sum
 	cd tools && go build -o bin/golint golang.org/x/lint/golint
 
-tools/bin/golangci-lint: tools/go.mod tools/go.sum ## golangci-lint
+tools/bin/golangci-lint: tools/go.mod tools/go.sum
 	cd tools && go build -o bin/golangci-lint github.com/golangci/golangci-lint/cmd/golangci-lint
 
-tools/bin/addlicense: tools/go.mod tools/go.sum ## addlicense
+tools/bin/addlicense: tools/go.mod tools/go.sum
 	cd tools && go build -o bin/addlicense github.com/google/addlicense
 
