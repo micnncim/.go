@@ -7,6 +7,10 @@
 tools/update: ## Update binaries managed by tools.
 	cd tools && go mod tidy
 
+
+tools/bin/gofumpt: tools/go.mod tools/go.sum
+	cd tools && go build -o bin/gofumpt mvdan.cc/gofumpt
+
 tools/bin/golint: tools/go.mod tools/go.sum
 	cd tools && go build -o bin/golint golang.org/x/lint/golint
 

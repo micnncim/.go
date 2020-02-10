@@ -51,21 +51,30 @@ test: lint ## Run test Go files.
 coverage: ## Measure coverage for Go files.
 	$(GOTEST) -coverpkg ./... -covermode=atomic -coverprofile=coverage.txt -race ./...
 
+## format
+
+.PHONY: format
+format: format/gofumpt ## Run all formatters.
+
+.PHONY: format/gofumpt
+format/gofumpt: tools/bin/gofumpt ### Run gofumpt.
+	gofumpt -w .
+
 ## lint
 
 .PHONY: lint
-lint: lint/vet lint/golint lint/golangci-lint ## Run all linters for Go files.
+lint: lint/vet lint/golint lint/golangci-lint ## Run all linters.
 
 .PHONY: lint/vet
-lint/vet: ## Run go vet.
+lint/vet:
 	go vet ./...
 
 .PHONY: lint/golint
-lint/golint: tools/bin/golint ## Run golint.
+lint/golint: tools/bin/golint
 	golint ./...
 
 .PHONY: lint/golangci-lint
-lint/golangci-lint: tools/bin/golangci-lint ## Run golangci-lint.
+lint/golangci-lint: tools/bin/golangci-lint
 	golangci-lint run ./...
 
 ## clean
