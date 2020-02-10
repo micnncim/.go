@@ -1,7 +1,12 @@
 # ----------------------------------------------------------------------------
+# include
+
+$(call _conditional_include,$(MAKE)/tools.mk)
+
+# ----------------------------------------------------------------------------
 # targets
 
 .PHONY: license
-license: ## Add license header to files.
-	addlicense -v -c <<OWNER>>
+license: tools/bin/addlicense ## Add license header to files.
+	addlicense -c <<OWNER>> .
 
