@@ -21,6 +21,7 @@ $ fd -E .git -X sd '<<YEAR>>' '2020'
 
 ```
 $ make help
+
 Usage:
   make <target>
 
@@ -36,5 +37,8 @@ Targets:
   lint/golangci-lint             Run golangci-lint.
   clean                          Clean up cache.
   docker/build                   Build docker image.
+  docker/push                    Push docker image to docker registry.
+  license                        Add license header to files.
+
 ```
 
