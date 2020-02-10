@@ -6,8 +6,8 @@
 MAKE := make
 
 APP = <<PROJECT>>
-CMD_PREFIX = <<PROJECT>>/cmd/
-CMD = $(CMD_PREFIX)$(APP)
+CMD_PREFIX = cmd
+CMD = $(CMD_PREFIX)/$(APP)
 
 # ----------------------------------------------------------------------------
 # include

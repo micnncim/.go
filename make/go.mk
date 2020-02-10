@@ -7,6 +7,8 @@ GOOS ?= $(shell go env GOOS)
 GOARCH ?= $(shell go env GOARCH)
 endif
 
+BIN ?= bin
+
 GO111MODULE := on
 CGO_ENABLED ?= 0
 
