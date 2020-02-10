@@ -11,6 +11,8 @@ GO111MODULE := on
 CGO_ENABLED ?= 0
 BIN := bin
 
+GO_TEST ?= go test
+
 # ----------------------------------------------------------------------------
 # targets
 
@@ -41,7 +43,7 @@ dep: ## Install dependencies as Go Modules.
 
 .PHONY: test
 test: lint ## Run test Go files.
-	go test -race ./...
+	$(GO_TEST) -v -race ./...
 
 .PHONY: coverage
 coverage: ## Measure coverage for Go files.
