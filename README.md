@@ -10,10 +10,11 @@ $ cd repo
 $ rm -rf .git
 $ git init
 $ git remote add origin https://github.com/owner/repo
-$ fd -E .git -X sd '<<OWNER>>' 'owner'
-$ fd -E .git -X sd '<<PROJECT>>' 'repo'
 $ rm -f README.md
 $ mv README.tmpl.md README.md
+$ fd -E .git -X sd '<<OWNER>>' 'owner'
+$ fd -E .git -X sd '<<PROJECT>>' 'repo'
+$ fd -E .git -X sd '<<YEAR>>' '2020'
 ```
 
 ## Development commands
