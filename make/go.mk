@@ -44,7 +44,7 @@ dep: ## Install dependencies as Go Modules.
 ## test
 
 .PHONY: test
-test: lint ## Run test Go files.
+test: format lint ## Run test Go files.
 	$(GOTEST) -v -race ./...
 
 .PHONY: coverage
