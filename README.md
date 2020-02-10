@@ -5,12 +5,15 @@ A template repository for Go.
 ## Setup
 
 ```
-$ git clone https://github.com/micnncim/.go hello
-$ cd hello
+$ git clone https://github.com/micnncim/.go repo
+$ cd repo
 $ rm -rf .git
 $ git init
-$ git remote add origin https://github.com/eng/hello
-$ fd -E .git -X sd '<<PROJECT>>' 'hello'
+$ git remote add origin https://github.com/owner/repo
+$ fd -E .git -X sd '<<OWNER>>' 'owner'
+$ fd -E .git -X sd '<<PROJECT>>' 'repo'
+$ rm -f README.md
+$ mv README.tmpl.md README.md
 ```
 
 ## Development commands
@@ -33,3 +36,4 @@ Targets:
   clean                          Clean up cache.
   docker/build                   Build docker image.
 ```
+
