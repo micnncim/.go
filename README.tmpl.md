@@ -33,7 +33,7 @@
 [codefactor]: https://www.codefactor.io/repository/github/<<OWNER>>/<<PROJECT>>
 [codefactor-badge]: https://img.shields.io/codefactor/grade/github/<<OWNER>>/<<PROJECT>>?logo=codefactor&style=for-the-badge
 
-[dependabot]: https://github.com/<<OWNER>>/action-label-syncer/pulls?q=is:pr%20author:app/dependabot-preview
+[dependabot]: https://github.com/<<OWNER>>/<<PROJECT>>/pulls?q=is:pr%20author:app/dependabot-preview
 [dependabot-badge]: https://img.shields.io/badge/dependabot-enabled-blue?style=for-the-badge&logo=dependabot
 
 [license]: LICENSE
