@@ -40,8 +40,6 @@ install: dep ## Install a binary into $GOPATH/bin.
 .PHONY: dep
 dep: ## Install dependencies as Go Modules.
 	go mod download
-	go mod verify
-	go mod tidy
 
 ## test
 
