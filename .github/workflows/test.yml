@@ -39,5 +39,14 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-go-
 
-      - name: Test
-        run: go test -v -race ./...
+      - name: Test and measure coverage
+        run: make coverage
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          file: coverage.txt
+          yml: .codecov.yml
+          fail_ci_if_error: true
+
