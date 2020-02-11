@@ -1,4 +1,4 @@
-module github.com/micnncim/.go/tools
+module github.com/<<OWNER>>/<<PROJECT>>/tools
 
 go 1.13
 
