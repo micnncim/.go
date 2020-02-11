@@ -3,11 +3,10 @@
 
 .DEFAULT_GOAL = all
 
+# MAKE is a directory which contains .mk files.
 MAKE := make
 
-APP = <<PROJECT>>
-CMD_PREFIX = cmd
-CMD = $(CMD_PREFIX)/$(APP)
+APP := <<PROJECT>>
 
 # ----------------------------------------------------------------------------
 # include

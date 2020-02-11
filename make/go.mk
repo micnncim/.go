@@ -1,6 +1,8 @@
 # ----------------------------------------------------------------------------
 # global
 
+CMD = cmd/$(APP)
+
 ifneq ($(shell command -v go),)
 GOPATH ?= $(shell go env GOPATH)
 GOOS ?= $(shell go env GOOS)
@@ -31,7 +33,7 @@ all: test
 
 .PHONY: build
 build: dep ## Build a Go application.
-	CGO_ENABLED=$(CGO_ENABLED) GOOS=$(GOOS) GOARCH=$(GOARCH) go build -o $(BIN)/$(APP) $(CMD)
+	CGO_ENABLED=$(CGO_ENABLED) GOOS=$(GOOS) GOARCH=$(GOARCH) go build -v -o $(BIN)/$(APP) $(CMD)/main.go
 
 .PHONY: install
 install: dep ## Install a binary into $GOPATH/bin.
