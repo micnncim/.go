@@ -32,10 +32,10 @@ Targets:
   dep                            Install dependencies as Go Modules.
   test                           Run test Go files.
   coverage                       Measure coverage for Go files.
-  lint                           Run all linters for Go files.
-  lint/vet                       Run go vet.
-  lint/golangci-lint             Run golangci-lint.
+  format                         Run all formatters.
+  lint                           Run all linters.
   clean                          Clean up cache.
+  tools/update                   Update binaries managed by tools.
   docker/build                   Build docker image.
   docker/push                    Push docker image to docker registry.
   license                        Add license header to files.
