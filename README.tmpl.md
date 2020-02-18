@@ -4,7 +4,6 @@
 [![codecov][codecov-badge]][codecov]
 [![docker-build][docker-build-badge]][docker-build]
 [![release][release-badge]][release]
-[![go-version][go-version-badge]][go-version]
 [![pkg.go.dev][pkg.go.dev-badge]][pkg.go.dev]
 [![go-report-card][go-report-card-badge]][go-report-card]
 [![codefactor][codefactor-badge]][codefactor]
@@ -30,9 +29,6 @@
 
 [go-report-card]: https://goreportcard.com/report/github.com/<<OWNER>>/<<PROJECT>>
 [go-report-card-badge]: https://goreportcard.com/badge/github.com/<<OWNER>>/<<PROJECT>>?style=for-the-badge
-
-[go-version]: go.mod
-[go-version-badge]: https://img.shields.io/github/go-mod/go-version/<<OWNER>>/<<PROJECT>>?logo=go&style=for-the-badge
 
 [codefactor]: https://www.codefactor.io/repository/github/<<OWNER>>/<<PROJECT>>
 [codefactor-badge]: https://img.shields.io/codefactor/grade/github/<<OWNER>>/<<PROJECT>>?logo=codefactor&style=for-the-badge
