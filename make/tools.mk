@@ -7,6 +7,7 @@
 tools/update: ## Update binaries managed by tools.
 	cd tools && go mod tidy
 
+### installation of tools
 
 tools/bin/gofumpt: tools/go.mod tools/go.sum
 	cd tools && go build -o bin/gofumpt mvdan.cc/gofumpt
