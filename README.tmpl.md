@@ -24,7 +24,7 @@
 [release]: https://github.com/<<OWNER>>/<<PROJECT>>/releases
 [release-badge]: https://img.shields.io/github/v/release/<<OWNER>>/<<PROJECT>>?style=for-the-badge&logo=github
 
-[pkg.go.dev]: https://pkg.go.dev/github.com/<<OWNER>>/<<PROJECT>>
+[pkg.go.dev]: https://pkg.go.dev/github.com/<<OWNER>>/<<PROJECT>>?tab=overview
 [pkg.go.dev-badge]: https://img.shields.io/badge/pkg.go.dev-reference-blue?style=for-the-badge&logo=go
 
 [go-report-card]: https://goreportcard.com/report/github.com/<<OWNER>>/<<PROJECT>>
