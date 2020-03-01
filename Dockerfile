@@ -12,9 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM golang as builder
+FROM golang:1.13-buster as builder
 
 WORKDIR /src
+
+COPY go.* .
+RUN go mod download
+
 COPY . .
 
 RUN go build -o /bin/<<PROJECT>> cmd/<<PROJECT>>/main.go
