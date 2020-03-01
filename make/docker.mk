@@ -3,7 +3,7 @@
 
 DOCKER_BUILD_ARGS ?=
 DOCKER_BUILD_TARGET ?= ${APP}
-DOCKER_REGISTRY ?= index.docker.io
+DOCKER_REGISTRY ?= docker.io
 DOCKER_BUILD_TAG ?= latest
 
 # ----------------------------------------------------------------------------
