@@ -33,27 +33,27 @@ all: test
 
 .PHONY: build
 build: dep ## Build a Go application.
-	CGO_ENABLED=$(CGO_ENABLED) GOOS=$(GOOS) GOARCH=$(GOARCH) go build -v -o $(BIN)/$(APP) $(CMD)/main.go
+	@CGO_ENABLED=$(CGO_ENABLED) GOOS=$(GOOS) GOARCH=$(GOARCH) go build -v -o $(BIN)/$(APP) $(CMD)/main.go
 
 .PHONY: install
 install: dep ## Install a binary into $GOPATH/bin.
-	CGO_ENABLED=$(CGO_ENABLED) GOOS=$(GOOS) GOARCH=$(GOARCH) go install -v $(CMD)
+	@CGO_ENABLED=$(CGO_ENABLED) GOOS=$(GOOS) GOARCH=$(GOARCH) go install -v $(CMD)
 
 ## dep
 
 .PHONY: dep
 dep: ## Install dependencies as Go Modules.
-	go mod download
+	@go mod download
 
 ## test
 
 .PHONY: test
 test: format lint ## Run test Go files.
-	$(GOTEST) -v -race ./...
+	@$(GOTEST) -v -race ./...
 
 .PHONY: coverage
 coverage: ## Measure coverage for Go files.
-	$(GOTEST) -coverpkg ./... -covermode=atomic -coverprofile=coverage.txt -race ./...
+	@$(GOTEST) -coverpkg ./... -covermode=atomic -coverprofile=coverage.txt -race ./...
 
 ## format
 
@@ -62,7 +62,7 @@ format: format/gofumpt ## Run all formatters.
 
 .PHONY: format/gofumpt
 format/gofumpt: tools/bin/gofumpt ### Run gofumpt.
-	gofumpt -w .
+	@gofumpt -w .
 
 ## lint
 
@@ -71,18 +71,18 @@ lint: lint/vet lint/golint lint/golangci-lint ## Run all linters.
 
 .PHONY: lint/vet
 lint/vet:
-	go vet ./...
+	@go vet ./...
 
 .PHONY: lint/golint
 lint/golint: tools/bin/golint
-	golint ./...
+	@golint ./...
 
 .PHONY: lint/golangci-lint
 lint/golangci-lint: tools/bin/golangci-lint
-	golangci-lint run ./...
+	@golangci-lint run ./...
 
 ## clean
 
 .PHONY: clean
 clean:  ## Clean up cache.
-	go clean -cache
+	@go clean -cache
