@@ -4,17 +4,19 @@ A template repository for Go.
 
 ## Setup
 
-```
-$ git clone https://github.com/micnncim/.go repo
-$ cd repo
+```console
+$ OWNER=
+$ REPO=
+$ git clone https://github.com/micnncim/.go ${REPO} && cd $_
 $ rm -rf .git
 $ git init
-$ git remote add origin https://github.com/owner/repo
+$ git remote add origin https://github.com/${OWNER}/${REPO}
 $ rm -f README.md
 $ mv README.tmpl.md README.md
-$ fd -E .git -X sd '<<OWNER>>' 'owner'
-$ fd -E .git -X sd '<<PROJECT>>' 'repo'
-$ fd -E .git -X sd '<<YEAR>>' '2020'
+$ fd -E .git -X sd '<<OWNER>>' ${OWNER}
+$ fd -E .git -X sd '<<PROJECT>>' ${REPO}
+$ fd -E .git -X sd '<<YEAR>>' $(date '+%Y')
+$ fd .gitkeep -X rm
 ```
 
 ## Development commands
