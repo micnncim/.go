@@ -34,4 +34,3 @@
 
 [license]: LICENSE
 [license-badge]: https://img.shields.io/github/license/<<OWNER>>/<<PROJECT>>?style=for-the-badge
-
