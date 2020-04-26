@@ -5,6 +5,7 @@ A template repository for Go.
 ## Setup
 
 ```console
+$ git clone https://github.com/micnncim/.go PROJECT && cd $_
 $ ./init.sh OWNER PROJECT
 $ rm init.sh
 ```
