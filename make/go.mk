@@ -39,16 +39,20 @@ build: dep ## Build a Go application.
 install: dep ## Install a binary into $GOPATH/bin.
 	@CGO_ENABLED=$(CGO_ENABLED) GOOS=$(GOOS) GOARCH=$(GOARCH) go install -v $(CMD)
 
-## dep
+## mod
 
-.PHONY: dep
-dep: ## Install dependencies as Go Modules.
+.PHONY: mod/download
+mod/download:
 	@go mod download
+
+.PHONY: mod/tidy
+mod/tidy:
+	@go mod tidy
 
 ## test
 
 .PHONY: test
-test: format lint ## Run test Go files.
+test: format ## Run test Go files.
 	@$(GOTEST) -v -race ./...
 
 .PHONY: coverage
