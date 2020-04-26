@@ -5,23 +5,13 @@ A template repository for Go.
 ## Setup
 
 ```console
-$ OWNER=
-$ REPO=
-$ git clone https://github.com/micnncim/.go ${REPO} && cd $_
-$ rm -rf .git
-$ git init
-$ git remote add origin https://github.com/${OWNER}/${REPO}
-$ rm -f README.md
-$ mv README.tmpl.md README.md
-$ fd -E .git -X sd '<<OWNER>>' ${OWNER}
-$ fd -E .git -X sd '<<PROJECT>>' ${REPO}
-$ fd -E .git -X sd '<<YEAR>>' $(date '+%Y')
-$ fd .gitkeep -X rm
+$ ./init.sh OWNER PROJECT
+$ rm init.sh
 ```
 
 ## Development commands
 
-```
+```console
 $ make help
 
 Usage:
@@ -43,4 +33,3 @@ Targets:
   license                        Add license header to files.
 
 ```
-
