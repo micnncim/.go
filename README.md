@@ -8,6 +8,7 @@ A template repository for Go.
 $ git clone https://github.com/micnncim/.go PROJECT && cd $_
 $ ./init.sh OWNER PROJECT
 $ rm init.sh
+$ # Remove Dockerfile etc. as necessary
 ```
 
 ## Development commands
