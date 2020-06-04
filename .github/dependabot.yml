@@ -8,4 +8,15 @@ updates:
       timezone: Asia/Tokyo
     open-pull-requests-limit: 10
     labels:
+      - dependencies
+      - dependencies/dependabot
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: daily
+      time: "09:00"
+      timezone: Asia/Tokyo
+    open-pull-requests-limit: 10
+    labels:
+      - dependencies
       - dependencies/dependabot
